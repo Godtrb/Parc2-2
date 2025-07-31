@@ -20,10 +20,15 @@ def DigCont(a,b=1):
         return b
     else:
         return DigCont(a,b+1)
-def ContLetra(a,):
-x="ran"
-print(x[1])
-e=0
+def ContLetra(a,pal,len,cont=0):
+    if len==0:
+        return cont
+    else:
+        if pal[len]==a:
+            cont+=1
+            return ContLetra(a,pal,len-1,cont)
+        else:
+            return ContLetra(a,pal,len-1,cont)
 match e:
     case 1:
         firstimp=int(input("Enter first number: "))
@@ -40,3 +45,5 @@ while e!=5:
     print("------Menu Recursivo--------")
     print("1.MCD")
     print("2.Rep un texto varias veces")
+    print("3.Contar digitos de un numero")
+    print("4.Contar letras en una palabra")
