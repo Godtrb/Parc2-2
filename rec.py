@@ -29,8 +29,14 @@ def ContLetra(a,pal,len,cont=0):
             return ContLetra(a,pal,len-1,cont)
         else:
             return ContLetra(a,pal,len-1,cont)
+def BinTurn(a,binlen=1):
+    lenght=pow(2,binlen)
+    if lenght<=a:
+        return BinTurn(a,binlen+1)
+    elif lenght>=a:
+        return BinTurn(a,lenght-1)
 
-e=0
+
 
 while e!=6:
     print("------Menu Recursivo--------")
