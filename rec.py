@@ -40,7 +40,7 @@ def BinTurn(a,binlen=0,starter=0):
     elif lenght>=a:
         print("1", end="")
         a=a-lenght
-        return BinTurn(a,lenght+1,1)
+        return BinTurn(a,binlen+1,1)
 
 
 e=0
