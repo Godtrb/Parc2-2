@@ -29,15 +29,21 @@ def ContLetra(a,pal,len,cont=0):
             return ContLetra(a,pal,len-1,cont)
         else:
             return ContLetra(a,pal,len-1,cont)
-def BinTurn(a,binlen=1):
+def BinTurn(a,binlen=0,starter=0):
     lenght=pow(2,binlen)
+    if a==0:
+        return 8
     if lenght<=a:
-        return BinTurn(a,binlen+1)
+        if starter==1:
+            print("0", end="")
+        return BinTurn(a,binlen+1,starter)
     elif lenght>=a:
-        return BinTurn(a,lenght-1)
+        print("1", end="")
+        a=a-lenght
+        return BinTurn(a,lenght+1,1)
 
 
-
+e=0
 while e!=6:
     print("------Menu Recursivo--------")
     print("1.MCD")
@@ -64,3 +70,7 @@ while e!=6:
             letra = input("Ingrese letra: ")
             lenght = len(palreq)
             print(f"La letra {letra} se repite {ContLetra(letra, palreq, lenght)} veces")
+hex=int(input("Ingrese el numero hexadecimal: "))
+print("")
+BinTurn(hex)
+print("")
