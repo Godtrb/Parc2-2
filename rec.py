@@ -29,8 +29,13 @@ def ContLetra(a,pal,len,cont=0):
             return ContLetra(a,pal,len-1,cont)
         else:
             return ContLetra(a,pal,len-1,cont)
-def BinTurn(a,binlen=0,starter=0):
+def BinTurn(a,binlen=0,starter=3):
     lenght=pow(2,binlen)
+    if starter==3:
+        if lenght<a:
+            return BinTurn(a,binlen+1)
+        elif lenght>=a:
+            return BinTurn(a,binlen,0)
     if a==0:
         return 8
     if lenght<=a:
