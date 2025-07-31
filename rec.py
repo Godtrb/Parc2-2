@@ -29,8 +29,8 @@ def ContLetra(a,pal,len,cont=0):
             return ContLetra(a,pal,len-1,cont)
         else:
             return ContLetra(a,pal,len-1,cont)
-e=6
 
+e=0
 
 while e!=6:
     print("------Menu Recursivo--------")
